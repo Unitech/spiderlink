@@ -2,7 +2,7 @@
 
 Based on WS (UWS compatible)
 
-## Usage (code)
+## Usage
 
 Server:
 
