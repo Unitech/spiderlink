@@ -1,0 +1,26 @@
+{
+  "name": "pm2-bus",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "dependencies": {
+    "debug": "^2.6.0",
+    "ws" : "*"
+  },
+  "devDependencies": {
+    "mocha" : "*",
+    "should" : "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Unitech/pm2-bus.git"
+  }
+}
