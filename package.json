@@ -19,6 +19,9 @@
     "mocha" : "*",
     "should" : "*"
   },
+  "scripts": {
+    "test": "mocha test"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/Unitech/pm2-bus.git"
