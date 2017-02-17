@@ -15,7 +15,7 @@
     "port": "12046"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=4.0"
   },
   "dependencies": {
     "debug": "^2.6.0",
