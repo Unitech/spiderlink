@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+require('../index').createServer({
+  debug : true
+})

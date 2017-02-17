@@ -1,4 +1,4 @@
-# pm2-bus
+# pm2-pubsub
 
 Based on WS (UWS compatible)
 
@@ -7,7 +7,7 @@ Based on WS (UWS compatible)
 Server:
 
 ```js
-var bus = require('pm2-bus')
+var bus = require('pm2-pubsub')
 
 bus.createServer()
 ```
@@ -17,7 +17,7 @@ Client:
 ### PUB/SUB
 
 ```js
-var bus = require('pm2-bus')
+var bus = require('pm2-pubsub')
 var client = bus.createClient()
 
 client.subscribe('channel1', (message) => {
@@ -32,7 +32,7 @@ client.publish('channel1', { some : 'data' });
 Service #1:
 
 ```js
-var bus = require('pm2-bus')
+var bus = require('pm2-pubsub')
 var client = bus.createClient()
 
 client.expose('myfunction', function(data, done) {
@@ -44,9 +44,8 @@ client.expose('myfunction', function(data, done) {
 Consumer #1:
 
 ```js
-var bus = require('pm2-bus')
+var bus = require('pm2-pubsub')
 var client = bus.createClient()
-
 
 client2.call('testfunction', { some : 'data'}, function(data) {
    // data = result
