@@ -7,9 +7,7 @@ Based on WS (UWS compatible)
 Server:
 
 ```js
-var bus = require('pm2-pubsub')
-
-bus.createServer()
+require('pm2-pubsub')({ server : true })
 ```
 
 Client:
@@ -17,14 +15,13 @@ Client:
 ### PUB/SUB
 
 ```js
-var bus = require('pm2-pubsub')
-var client = bus.createClient()
+var bus = require('pm2-pubsub')('app-name');
 
-client.subscribe('channel1', (message) => {
+bus.subscribe('channel1', (message) => {
   console.log('message:', message)
 })
 
-client.publish('channel1', { some : 'data' });
+bus.publish('channel1', { some : 'data' });
 ```
 
 ### RPC
@@ -32,10 +29,9 @@ client.publish('channel1', { some : 'data' });
 Service #1:
 
 ```js
-var bus = require('pm2-pubsub')
-var client = bus.createClient()
+var bus = require('pm2-pubsub')('app-name');
 
-client.expose('myfunction', function(data, done) {
+bus.expose('myfunction', function(data, done) {
   // some processing
   return done({ success : true, my : 'data' });
 });
@@ -44,10 +40,9 @@ client.expose('myfunction', function(data, done) {
 Consumer #1:
 
 ```js
-var bus = require('pm2-pubsub')
-var client = bus.createClient()
+var bus = require('pm2-pubsub')('app-name');
 
-client2.call('testfunction', { some : 'data'}, function(data) {
+bus.call('testfunction', { some : 'data'}, function(data) {
    // data = result
 });
 ```

@@ -1,23 +1,21 @@
 
 var should = require('should');
 
-var bus = require('..');
-
 describe('Client testing', function() {
   var server;
   var client1;
   var client2;
 
   it('should initialize server', function() {
-    bus.createServer();
+    server = require('..')({ server: true });
   });
 
   it('should create client', function() {
-    client1 = bus.createClient({ forceNew : true });
+    client1 = require('..')('global');
   });
 
   it('should create second client', function() {
-    client2 = bus.createClient({ forceNew : true });
+    client2 = require('..')({ namespace : 'global', forceNew : true });
   });
 
   describe('Basic messaging', function() {

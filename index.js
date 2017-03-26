@@ -31,4 +31,8 @@ var Bus = {
   }
 }
 
-module.exports = Bus;
+module.exports = function(options) {
+  if (typeof(options) == 'object' && options.server == true)
+    return Bus.createServer(options);
+  return Bus.createClient(options);
+};
