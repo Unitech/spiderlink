@@ -15,7 +15,7 @@ Client:
 ### PUB/SUB
 
 ```js
-var bus = require('pm2-pubsub')('app-name');
+var bus = require('pm2-pubsub')('namespace');
 
 bus.subscribe('channel1', (message) => {
   console.log('message:', message)
@@ -29,7 +29,7 @@ bus.publish('channel1', { some : 'data' });
 Service #1:
 
 ```js
-var bus = require('pm2-pubsub')('app-name');
+var bus = require('pm2-pubsub')('namespace');
 
 bus.expose('myfunction', function(data, done) {
   // some processing
@@ -40,7 +40,7 @@ bus.expose('myfunction', function(data, done) {
 Consumer #1:
 
 ```js
-var bus = require('pm2-pubsub')('app-name');
+var bus = require('pm2-pubsub')('namespace');
 
 bus.call('testfunction', { some : 'data'}, function(data) {
    // data = result
