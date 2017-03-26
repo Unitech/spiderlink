@@ -13,11 +13,11 @@ describe('Client testing', function() {
   });
 
   it('should create client', function() {
-    client1 = bus.createClient();
+    client1 = bus.createClient({ forceNew : true });
   });
 
   it('should create second client', function() {
-    client2 = bus.createClient();
+    client2 = bus.createClient({ forceNew : true });
   });
 
   describe('Basic messaging', function() {
