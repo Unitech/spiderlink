@@ -2,49 +2,47 @@
 
 Based on WS (UWS compatible)
 
-## Usage
+Install module:
 
-Server:
-
-```js
-require('pm2-pubsub')({ server : true })
+```bash
+$ pm2 install pm2-pubsub
 ```
 
-Client:
+Then expose some function in app1:
+
+```js
+var app = require('pm2-pubsub')('namespace');
+
+app.expose('myfunction', function(data, done) {
+  // some processing
+  return done({ success : true, my : data });
+});
+```
+
+On app2 call remote function:
+
+```js
+var app = require('pm2-pubsub')('namespace');
+
+app.call('myfunction', { some : 'data'}, function(data) {
+   // data = result
+});
+```
 
 ### PUB/SUB
 
-```js
-var bus = require('pm2-pubsub')('namespace');
+```bash
+$ npm install pm2-pubsub
+```
 
-bus.subscribe('channel1', (message) => {
+```js
+var app = require('pm2-pubsub')('namespace');
+
+app.subscribe('channel1', (message) => {
   console.log('message:', message)
 })
 
-bus.publish('channel1', { some : 'data' });
-```
-
-### RPC
-
-Service #1:
-
-```js
-var bus = require('pm2-pubsub')('namespace');
-
-bus.expose('myfunction', function(data, done) {
-  // some processing
-  return done({ success : true, my : 'data' });
-});
-```
-
-Consumer #1:
-
-```js
-var bus = require('pm2-pubsub')('namespace');
-
-bus.call('testfunction', { some : 'data'}, function(data) {
-   // data = result
-});
+app.publish('channel1', { some : 'data' });
 ```
 
 ## License
