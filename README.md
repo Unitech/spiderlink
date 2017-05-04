@@ -1,4 +1,4 @@
-# pm2-pubsub
+# Spiderlink
 
 Based on WS (UWS compatible)
 
@@ -6,13 +6,13 @@ Install module:
 
 ```bash
 $ npm install pm2 -g
-$ pm2 install pm2-pubsub
+$ pm2 install spiderlink
 ```
 
 Then expose some function in app1:
 
 ```js
-var app = require('pm2-pubsub')('namespace');
+var app = require('spiderlink')('namespace');
 
 app.expose('myfunction', function(data, done) {
   // some processing
@@ -23,7 +23,7 @@ app.expose('myfunction', function(data, done) {
 On app2 call remote function:
 
 ```js
-var app = require('pm2-pubsub')('namespace');
+var app = require('spiderlink')('namespace');
 
 app.call('myfunction', { some : 'data'}, function(data) {
    // data = result
@@ -33,11 +33,11 @@ app.call('myfunction', { some : 'data'}, function(data) {
 ### PUB/SUB
 
 ```bash
-$ npm install pm2-pubsub
+$ npm install spiderlink
 ```
 
 ```js
-var app = require('pm2-pubsub')('namespace');
+var app = require('spiderlink')('namespace');
 
 app.subscribe('channel1', (message) => {
   console.log('message:', message)
