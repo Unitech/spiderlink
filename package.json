@@ -1,14 +1,14 @@
 {
-  "name": "pm2-pubsub",
-  "version": "2.0.1",
-  "description": "",
+  "name": "spiderlink",
+  "version": "1.0.1",
+  "description": "Simple, yet optimized application intercommunication within the same machine. Based on WS.",
   "main": "index.js",
-  "author": "unitech",
-  "license": "MIT",
+  "author": "Alexandre Strzelewicz",
+  "license": "Apache 2",
   "apps": [
     {
-      "name": "pm2-pubsub",
-      "script": "./.bin/pm2-pubsub"
+      "name": "spiderlink",
+      "script": "./.bin/spiderlink"
     }
   ],
   "config": {
@@ -31,6 +31,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Unitech/pm2-bus.git"
+    "url": "git://github.com/Unitech/spiderlink.git"
   }
 }
