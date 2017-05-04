@@ -5,6 +5,7 @@ Based on WS (UWS compatible)
 Install module:
 
 ```bash
+$ npm install pm2 -g
 $ pm2 install pm2-pubsub
 ```
 
