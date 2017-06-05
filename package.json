@@ -5,12 +5,21 @@
   "main": "index.js",
   "author": "Alexandre Strzelewicz",
   "license": "Apache 2",
+  "scripts": {
+    "build": "browserify -s Spiderlink -r ./ > ./dist/spiderlink.min.js",
+    "dist": "browserify -s Spiderlink -r ./ | uglifyjs -c warnings=false -m > ./dist/spiderlink.min.js",
+    "test": "mocha test"
+  },
   "apps": [
     {
       "name": "spiderlink",
       "script": "./.bin/spiderlink"
     }
   ],
+  "browser": {
+    "ws": false,
+    "pmx": false
+  },
   "config": {
     "port": "12046"
   },
@@ -19,15 +28,14 @@
   },
   "dependencies": {
     "debug": "^2.6.0",
-    "ws": "*",
+    "ws": "^2.0",
     "pmx": "*"
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
-  },
-  "scripts": {
-    "test": "mocha test"
+    "should": "*",
+    "uglify-js": "*",
+    "browserify": "^14.0.0"
   },
   "repository": {
     "type": "git",

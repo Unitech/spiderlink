@@ -1,11 +1,9 @@
-var bus = require('..')
+var spiderlink = require('..')();
 
-var client = bus.createClient()
-
-client.subscribe('channel1', (message) => {
+spiderlink.subscribe('event:toto', (message) => {
   console.log('message:', message)
 })
 
 setInterval(() => {
-  client.publish('channel1', {name: 'hello'})
+  spiderlink.publish('channel1', {name: 'hello'})
 }, 1000)
