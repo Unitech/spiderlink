@@ -1,12 +1,12 @@
 {
   "name": "spiderlink",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Simple, yet optimized application intercommunication within the same machine. Based on WS.",
   "main": "index.js",
   "author": "Alexandre Strzelewicz",
   "license": "Apache 2",
   "scripts": {
-    "build": "browserify -s Spiderlink -r ./ > ./dist/spiderlink.min.js",
+    "build": "browserify -s Spiderlink -r ./ > ./dist/spiderlink.js",
     "dist": "browserify -s Spiderlink -r ./ | uglifyjs -c warnings=false -m > ./dist/spiderlink.min.js",
     "test": "mocha test"
   },
@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "debug": "^2.6.0",
-    "ws": "^2.0",
+    "ws": "^3.0",
     "pmx": "*"
   },
   "devDependencies": {

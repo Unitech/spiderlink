@@ -46,6 +46,10 @@ app.subscribe('channel1', (message) => {
 app.publish('channel1', { some : 'data' });
 ```
 
+## Front-end
+
+Use dist/spiderlink.min.js and use it via window.Spiderlink
+
 ## License
 
-MIT
+Apache 2
