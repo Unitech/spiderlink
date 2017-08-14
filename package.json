@@ -4,7 +4,7 @@
   "description": "Simple, yet optimized application intercommunication within the same machine. Based on WS.",
   "main": "index.js",
   "author": "Alexandre Strzelewicz",
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "browserify -s Spiderlink -r ./ > ./dist/spiderlink.js",
     "dist": "browserify -s Spiderlink -r ./ | uglifyjs -c warnings=false -m > ./dist/spiderlink.min.js",
