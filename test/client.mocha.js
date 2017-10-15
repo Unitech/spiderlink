@@ -18,6 +18,10 @@ describe('Client testing', function() {
     client2 = require('..')({ namespace : 'global', forceNew : true });
   });
 
+  after(function(done) {
+    server.close(done);
+  });
+
   describe('Basic messaging', function() {
     afterEach(function() {
       client1.unsubscribeAll();
