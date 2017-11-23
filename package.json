@@ -32,8 +32,8 @@
     "pmx": "*"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*",
+    "mocha": "^3.5",
+    "should": "^11",
     "uglify-js": "*",
     "browserify": "^14.0.0"
   },
